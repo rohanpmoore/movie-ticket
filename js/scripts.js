@@ -25,11 +25,11 @@ Ticket.prototype.calculatePrice = function(timeOut) {
 }
 
 Ticket.prototype.write = function() {
-  var output = "";
-  output += "Hello " + this.name + "!  ";
-  output += "Your ticket for " + this.movie + " at " + this.time;
-  output += " will be $" + this.price + ".  ";
-  output += "We hope you enjoy your showing!";
+  var output = "<p>";
+  output += "Thank you for your order " + this.name + "!  ";
+  output += "Your ticket for <strong>" + this.movie + " at " + this.time + "</strong> ";
+  output += "will be $" + this.price + ".  ";
+  output += "We hope you enjoy your showing!</p>";
   return output;
 }
 
@@ -99,7 +99,7 @@ $(document).ready(function() {
     $("#invalidAge").hide();
     var movieAge = getMovieAge(inputMovie, movies);
     var yourTicket = new Ticket(inputName, inputAge, inputMovie, inputTime, movieAge);
-    $("#output").text(yourTicket.write());
+    $("#output").html(yourTicket.write());
   });
   $("#movies").change(function() {
     var movie = $("#movies").val();
