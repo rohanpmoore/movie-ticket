@@ -9,6 +9,44 @@
     <title>Movie Ticket</title>
   </head>
   <body>
-
+    <div class="container">
+      <h1>Welcome to EpiTheater!</h1>
+      <form>
+        <div class="line">
+          <label for="nameInput">Enter your name:</label>
+          <input type="nameInput">
+        </div>
+        <div class="line">
+          <label for="ageInput">Enter your age:</label>
+          <input type="ageInput">
+        </div>
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="line">
+              <select class="form-control" id="movies">
+                <option>Halloween</option>
+                <option>Nobody's Fool</option>
+                <option>Bohemian Rhapsody</option>
+                <option>Beautiful Boy</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="line">
+              <select class="form-control" id="times">
+                <option>08:45</option>
+                <option>11:30</option>
+                <option>14:15</option>
+                <option>16:20</option>
+                <option>21:00</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <button type="submit" name="button" class="btn-info">Proceed to Checkout</button>
+      </form>
+    </div>
   </body>
 </html>
