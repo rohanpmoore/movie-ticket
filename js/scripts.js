@@ -33,15 +33,15 @@ Ticket.prototype.write = function() {
   return output;
 }
 
-Movie.prototype.writeOption = function() {
-  var output = "<option>" + this.name + "</option>"
-  return output;
-}
-
 function Movie(name, times, age) {
   this.name = name;
   this.times = [times];
   this.age = age;
+}
+
+Movie.prototype.writeOption = function() {
+  var output = "<option>" + this.name + "</option>"
+  return output;
 }
 
 function populateMovies(movies) {
