@@ -33,20 +33,16 @@ p {
 }
 
 .sidebar {
-  width: 20%;
   padding: 3px;
   border: solid grey 1px;
   text-align: center;
   background-color: lightblue;
-  float: right;
 }
 
 .form-class {
   border: solid grey 1px;
   padding: 3px;
   background-color: lightyellow;
-  float: left;
-  width: 80%
 }
 .sidebar h3 {
   text-decoration: underline;
