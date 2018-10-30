@@ -80,10 +80,10 @@ function findMovie(movieName, movies) {
 }
 
 $(document).ready(function() {
-  var suspriria = new Movie("Suspriria", ["08:45", "11:30", "14:15", "16:20", "21:00"], 4)
+  var suspiria = new Movie("Suspiria", ["08:45", "11:30", "14:15", "16:20", "21:00"], 4)
   var beautifulBoy = new Movie("Beautiful Boy", ["09:15", "11:00", "13:45", "18:00", "22:00"], 18)
   var halloween = new Movie("Halloween", ["11:15", "14:00", "18:45", "21:15", "22:30"], 11)
-  var movies = [suspriria, beautifulBoy, halloween];
+  var movies = [suspiria, beautifulBoy, halloween];
   populateMovies(movies);
   $("#tickets").submit(function(event) {
     event.preventDefault();

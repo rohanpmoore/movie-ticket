@@ -16,39 +16,50 @@
         </div>
       </div>
       <p>Welcome to Epitheater! Enjoy our updated luxurious seating, complete with reclining, in theatres 10 and 11!  We want your visit to be as comfortable as possible!  To reserve your ticket to the hottest new movies, just fill out the form below!</p>
-      <form id="tickets">
-        <div class="line">
-          <label for="nameInput">Enter your name:</label>
-          <input id="nameInput">
-        </div>
-        <div class="line">
-          <label for="ageInput">Enter your age:</label>
-          <input id="ageInput">
-        </div>
-        <div class="row">
-          <div class="col-sm-3">
-            <div class="line">
-              <label for="movies">Available Movies:
-                <select class="form-control" id="movies">
-                  <option value=""></option>
-                </select>
-              </label>
+      <div class="sidebar">
+        <h3>About our movies!</h3>
+        <h4>Suspiria</h4>
+        <p>A darkness swirls at the center of a world-renowned dance company, one that will engulf the troupe's artistic director (Swinton), an ambitious young dancer (Johnson), and a grieving psychotherapist (Ebersdorf).</p>
+        <h4>Beautiful Boy</h4>
+        <p>Based on the best-selling pair of memoirs from father and son David and Nic Sheff, Beautiful Boy chronicles the heartbreaking and inspiring experience of survival, relapse, and recovery in a family coping with addiction over many years.</p>
+        <h4>Halloween</h4>
+        <p>Laurie Strode comes to her final confrontation with Michael Myers, the masked figure who has haunted her since she narrowly escaped his killing spree on Halloween night four decades ago.</p>
+      </div>
+      <div class="form-class">
+        <form id="tickets">
+          <div class="line">
+            <label for="nameInput">Enter your name:</label>
+            <input id="nameInput">
+          </div>
+          <div class="line">
+            <label for="ageInput">Enter your age:</label>
+            <input id="ageInput">
+          </div>
+          <div class="row">
+            <div class="col-sm-3">
+              <div class="line">
+                <label for="movies">Available Movies:
+                  <select class="form-control" id="movies">
+                    <option value=""></option>
+                  </select>
+                </label>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-3">
-            <div class="line">
-              <label for="times">Show Times:
-                <select class="form-control" id="times"></select>
-              </label>
+          <div class="row">
+            <div class="col-sm-3">
+              <div class="line">
+                <label for="times">Show Times:
+                  <select class="form-control" id="times"></select>
+                </label>
+              </div>
             </div>
           </div>
+          <button type="submit" name="button" class="btn-info">Proceed to Checkout</button>
+        </form>
+        <p class="error line" id="invalidAge">You did not input a valid age.</p>
+        <div id="output" class="line">
         </div>
-        <button type="submit" name="button" class="btn-info">Proceed to Checkout</button>
-      </form>
-      <p class="error line" id="invalidAge">You did not input a valid age.</p>
-      <div id="output" class="line">
       </div>
     </div>
   </body>

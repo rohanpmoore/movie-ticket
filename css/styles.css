@@ -5,14 +5,15 @@ body {
   margin: 0px;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  color: #333;
 }
 
 h1 {
   text-align: center;
   font-weight: bold;
-  border: solid grey 2px;
+  border: solid grey 1px;
   padding: 5px;
-  background-color: #ddd;
+  background-color: #eee;
   color: black;
 }
 
@@ -29,4 +30,25 @@ p {
 .error {
   color: red;
   display: none;
+}
+
+.sidebar {
+  width: 20%;
+  padding: 3px;
+  border: solid grey 1px;
+  text-align: center;
+  background-color: lightblue;
+  float: right;
+}
+
+.form-class {
+  border: solid grey 1px;
+  padding: 3px;
+  background-color: lightyellow;
+  float: left;
+  width: 80%
+}
+.sidebar h3 {
+  text-decoration: underline;
+  margin-top: 0px;
 }
