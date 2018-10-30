@@ -10,10 +10,15 @@ body {
 h1 {
   text-align: center;
   font-weight: bold;
-  border: solid black 2px;
+  border: solid grey 2px;
   padding: 5px;
-  background-color: #aaa;
+  background-color: #ddd;
   color: black;
+}
+
+p {
+  font-size: 12pt;
+  font-family: fantasy;
 }
 
 .line {
