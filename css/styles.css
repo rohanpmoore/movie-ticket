@@ -1,3 +1,8 @@
 .line {
   display: block;
 }
+
+.error {
+  color: red;
+  display: none;
+}

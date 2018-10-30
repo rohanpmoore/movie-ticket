@@ -11,14 +11,14 @@
   <body>
     <div class="container">
       <h1>Welcome to EpiTheater!</h1>
-      <form>
+      <form id="tickets">
         <div class="line">
           <label for="nameInput">Enter your name:</label>
-          <input type="nameInput">
+          <input id="nameInput">
         </div>
         <div class="line">
           <label for="ageInput">Enter your age:</label>
-          <input type="ageInput">
+          <input id="ageInput">
         </div>
         <div class="row">
           <div class="col-sm-3">
@@ -47,6 +47,9 @@
         </div>
         <button type="submit" name="button" class="btn-info">Proceed to Checkout</button>
       </form>
+      <p class="error" id="invalidAge">You did not input a valid age.</p>
+      <div id="output">
+      </div>
     </div>
   </body>
 </html>
