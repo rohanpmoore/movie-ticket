@@ -59,11 +59,6 @@ function populateMovies(movies) {
 }
 
 function getMovieAge(movieName, movies) {
-  // for(i = 0; i < movies.length; i++) {
-  //   if(movies[i].name === movieName) {
-  //     return movies[i].age;
-  //   }
-  // }
   return findMovie(movieName, movies).age;
 }
 
