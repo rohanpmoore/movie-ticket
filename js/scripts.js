@@ -1,13 +1,13 @@
-function Ticket(ownerName, ownerAge, movieInput, timeInput) {
+function Ticket(ownerName, ownerAge, movieInput, timeInput, movieTimeOut) {
   this.name = ownerName,
   this.age = ownerAge,
   this.movie = movieInput,
   this.time = timeInput,
   this.price = 14;
-  this.calculatePrice();
+  this.calculatePrice(movieTimeOut);
 }
 
-Ticket.prototype.calculatePrice = function() {
+Ticket.prototype.calculatePrice = function(timeOut) {
   if(this.age > 64) {
     this.price -= 2;
   } else if (this.age < 18) {
@@ -18,6 +18,9 @@ Ticket.prototype.calculatePrice = function() {
     this.price -= 2;
   } else if(modifiedTime >= 17) {
     this.price += 2;
+  }
+  if(timeOut > 14) {
+    this.price -= 2;
   }
 }
 
@@ -30,7 +33,37 @@ Ticket.prototype.write = function() {
   return output;
 }
 
+Movie.prototype.writeOption = function() {
+  var output = "<option>" + this.name + "</option>"
+  return output;
+}
+
+function Movie(name, times, age) {
+  this.name = name;
+  this.times = [times];
+  this.age = age;
+}
+
+function populateMovies(movies) {
+  movies.forEach(function(movie) {
+    $("#movies").append(movie.writeOption());
+  });
+}
+
+function getMovieAge(movieName, movies) {
+  for(i = 0; i < movies.length; i++) {
+    if(movies[i].name === movieName) {
+      return movies[i].age;
+    }
+  }
+}
+
 $(document).ready(function() {
+  var suspriria = new Movie("Suspriria", ["08:45", "11:30", "14:15", "16:20", "21:00"], 4)
+  var beautifulBoy = new Movie("Beautiful Boy", ["09:15", "11:00", "13:45", "18:00", "22:00"], 18)
+  var halloween = new Movie("Halloween", ["11:15", "14:00", "18:45", "21:15", "22:30"], 11)
+  var movies = [suspriria, beautifulBoy, halloween];
+  populateMovies(movies);
   $("#tickets").submit(function(event) {
     event.preventDefault();
     var inputName = $("#nameInput").val();
@@ -42,8 +75,8 @@ $(document).ready(function() {
       return;
     }
     $("#invalidAge").hide();
-
-    var yourTicket = new Ticket(inputName, inputAge, inputMovie, inputTime);
+    var movieAge = getMovieAge(inputMovie, movies);
+    var yourTicket = new Ticket(inputName, inputAge, inputMovie, inputTime, movieAge);
     $("#output").text(yourTicket.write());
   });
 });
