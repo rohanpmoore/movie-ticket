@@ -35,12 +35,22 @@ Ticket.prototype.write = function() {
 
 function Movie(name, times, age) {
   this.name = name;
-  this.times = [times];
+  this.times = times;
   this.age = age;
 }
 
 Movie.prototype.writeOption = function() {
   var output = "<option>" + this.name + "</option>"
+  return output;
+}
+
+Movie.prototype.writeTimes = function() {
+  var output = "";
+  for(i = 0; i < (this.times).length; i++) {
+    debugger;
+    output += "<option>" + (this.times)[i] + "</option>";
+  }
+  debugger;
   return output;
 }
 
@@ -54,6 +64,18 @@ function getMovieAge(movieName, movies) {
   for(i = 0; i < movies.length; i++) {
     if(movies[i].name === movieName) {
       return movies[i].age;
+    }
+  }
+}
+
+function writeMovieTimes(movie) {
+  $("#times").html(movie.writeTimes());
+}
+
+function findMovie(movieName, movies) {
+  for(i = 0; i < movies.length; i++) {
+    if(movies[i].name === movieName) {
+      return movies[i];
     }
   }
 }
@@ -78,5 +100,12 @@ $(document).ready(function() {
     var movieAge = getMovieAge(inputMovie, movies);
     var yourTicket = new Ticket(inputName, inputAge, inputMovie, inputTime, movieAge);
     $("#output").text(yourTicket.write());
+  });
+  $("#movies").change(function() {
+    var movie = $("#movies").val();
+    if(!movie) {
+      $("#times").html("");
+    }
+    writeMovieTimes(findMovie(movie, movies));
   });
 });
