@@ -1,5 +1,24 @@
+body {
+  background-color: #ccc;
+  background-image: linear-gradient(lightyellow, lightgreen, darkgreen);
+  height: 100%;
+  margin: 0px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+h1 {
+  text-align: center;
+  font-weight: bold;
+  border: solid black 2px;
+  padding: 5px;
+  background-color: #aaa;
+  color: black;
+}
+
 .line {
   display: block;
+  margin: 2px;
 }
 
 .error {

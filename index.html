@@ -10,7 +10,12 @@
   </head>
   <body>
     <div class="container">
-      <h1>Welcome to EpiTheater!</h1>
+      <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+          <h1>Welcome to EpiTheater!</h1>
+        </div>
+      </div>
+      <p>Welcome to Epitheater! Enjoy our new seat</p>
       <form id="tickets">
         <div class="line">
           <label for="nameInput">Enter your name:</label>
@@ -23,23 +28,27 @@
         <div class="row">
           <div class="col-sm-3">
             <div class="line">
-              <select class="form-control" id="movies">
-                <option value=""></option>
-              </select>
+              <label for="movies">Available Movies:
+                <select class="form-control" id="movies">
+                  <option value=""></option>
+                </select>
+              </label>
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col-sm-3">
             <div class="line">
-              <select class="form-control" id="times"></select>
+              <label for="times">Show Times:
+                <select class="form-control" id="times"></select>
+              </label>
             </div>
           </div>
         </div>
         <button type="submit" name="button" class="btn-info">Proceed to Checkout</button>
       </form>
-      <p class="error" id="invalidAge">You did not input a valid age.</p>
-      <div id="output">
+      <p class="error line" id="invalidAge">You did not input a valid age.</p>
+      <div id="output" class="line">
       </div>
     </div>
   </body>

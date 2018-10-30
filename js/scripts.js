@@ -47,10 +47,8 @@ Movie.prototype.writeOption = function() {
 Movie.prototype.writeTimes = function() {
   var output = "";
   for(i = 0; i < (this.times).length; i++) {
-    debugger;
     output += "<option>" + (this.times)[i] + "</option>";
   }
-  debugger;
   return output;
 }
 
@@ -61,11 +59,12 @@ function populateMovies(movies) {
 }
 
 function getMovieAge(movieName, movies) {
-  for(i = 0; i < movies.length; i++) {
-    if(movies[i].name === movieName) {
-      return movies[i].age;
-    }
-  }
+  // for(i = 0; i < movies.length; i++) {
+  //   if(movies[i].name === movieName) {
+  //     return movies[i].age;
+  //   }
+  // }
+  return findMovie(movieName, movies).age;
 }
 
 function writeMovieTimes(movie) {
@@ -93,6 +92,7 @@ $(document).ready(function() {
     var inputMovie = $("#movies").val();
     var inputTime = $("#times").val();
     if (!inputAge || inputAge < 0) {
+      $("#output").text("");
       $("#invalidAge").show();
       return;
     }
